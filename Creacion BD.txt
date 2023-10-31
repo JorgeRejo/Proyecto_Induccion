@@ -1,0 +1,77 @@
+DROP DATABASE bd_induccion;
+
+-- Crear la base de datos
+CREATE DATABASE bd_induccion;
+
+-- Usar la base de datos
+USE bd_induccion;
+
+-- Tabla para empleados
+CREATE TABLE empleados (
+    idempleado INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_empleado VARCHAR(20) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    telefono VARCHAR(15),
+    direccion VARCHAR(100),
+    puesto VARCHAR(50)
+);
+
+-- Tabla para usuarios
+CREATE TABLE usuarios (
+    idusuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_usuario VARCHAR(50) NOT NULL,
+    contraseña VARCHAR(50) NOT NULL,
+    estado ENUM('Activo', 'Inactivo') NOT NULL,
+    grupo_id INT,
+    FOREIGN KEY (grupo_id) REFERENCES grupos(idgrupo)
+);
+
+-- Tabla para grupos
+CREATE TABLE grupos (
+    idgrupo INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_grupo VARCHAR(50) NOT NULL,
+    estado ENUM('Activo', 'Inactivo') NOT NULL
+);
+
+-- Tabla para documentos
+CREATE TABLE documentos (
+    iddoc INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_documento VARCHAR(20) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    descripcion TEXT,
+    documento BLOB
+);
+
+-- Tabla para puestos
+CREATE TABLE puestos (
+    idpuesto INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_puesto VARCHAR(20) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    descripcion TEXT
+);
+
+-- Tabla para asignación de documentos a empleados
+CREATE TABLE asig_documentos (
+    idasig INT AUTO_INCREMENT PRIMARY KEY,
+    idempleado INT,
+    iddocumento INT,
+    estado ENUM('Asignado', 'No asignado') NOT NULL,
+    FOREIGN KEY (idempleado) REFERENCES empleados(idempleado),
+    FOREIGN KEY (iddocumento) REFERENCES documentos(iddoc)
+);
+
+-- Llenado de las tablas 
+INSERT INTO empleados (codigo_empleado, nombre, apellido, telefono, direccion, puesto)
+VALUES ('E001', 'Kevin', 'Almengor', '11111111', 'Calle 123, Ciudad', 'Administrador');
+
+INSERT INTO usuarios (nombre_usuario, contraseña, estado, grupo_id)
+VALUES ('kalmengor', '1234', 'Activo', '1');
+
+INSERT INTO grupos (nombre_grupo, estado)
+VALUES ('Administrador', 'Activo'),
+       ('Capacitador', 'Activo'),
+       ('Empleado', 'Activo');
+
+INSERT INTO puestos (codigo_puesto, nombre, descripcion)
+VALUES ('P001', 'Administrador', 'Encargado de administrar el sistema de la empresa');
