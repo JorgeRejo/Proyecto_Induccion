@@ -1,0 +1,154 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27/10/2023, 18:32:26
+    Author     : jmess
+*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  background: #F0F3F6;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #D4E3F0;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+h2{
+    color:#022157;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color:#022157;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #2B649E;
+  color: whitesmoke;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 65%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 35%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #D4E3F0;
+  margin-top: 20px;
+}
+/*menú registros*/
+.registro{
+  overflow: hidden;
+  background-color: #8AABCB;
+  padding:10px;
+}
+.registro ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+.registro li a{
+  display: block;
+  color: #022157;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.registro li a:hover {
+  background-color: #52779B;
+  color: white;
+}
+.calendar {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    padding-left: 0px;
+}
+.calendar table {
+    width: 100%;
+    padding: 0;
+}
+.calendar th {
+    background-color: #203B6B;
+    color: #fff;
+}
+.calendar th, .calendar td {
+    padding: 8px;
+    border: 2px solid #0E2652;
+}
+.card_calendar {
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}

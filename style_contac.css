@@ -1,0 +1,71 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 29/10/2023, 20:52:59
+    Author     : jmess
+*/
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+         padding: 10px;
+            text-align: center;
+            background: white;
+          }
+
+          .header h1 {
+            font-size: 50px;
+          }
+
+/* Style the top navigation bar */
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+
+/* Style the topnav links */
+        .topnav a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        p {
+            font-size: 20px;
+            color: #555;
+        }
+        .icon {
+            width: 24px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icon {
+            display: inline-block;
+            margin: 10px;
+        }
+        .social-icon img {
+            width: 32px;
+            height: 32px;
+        }
